@@ -1,0 +1,161 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Define CSS custom properties (variables) */
+:root {
+    /* Primary Colors */
+    --orange: hsl(25, 97%, 53%);
+    
+    /* Neutral Colors */
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+/* Global reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply default styles to the entire document */
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Overpass", sans-serif; /* Use Overpass font */
+    color: var(--white); /* Set text color to white */
+}
+
+/* Main container styles */
+main {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--very-dark-blue); /* Set background color */
+}
+
+/* Container styles for the rating component */
+.container {
+    width: 400px;
+    height: 400px;
+    background: var(--dark-blue); /* Set background color */
+    border-radius: 25px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Star icon styles */
+figure {
+    width: 50px;
+    height: 50px;
+    background:hsl(216, 20%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Heading styles */
+h2 {
+    font-weight: 600; /* Set font weight to bold */
+}
+
+/* Paragraph styles */
+p {
+    font-size: 15px; /* Set font size */
+    color: var(--light-grey); /* Set text color */
+}
+
+/* Rating container styles */
+#rating {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Individual rating round styles */
+.round {
+    width: 50px;
+    height: 50px;
+    color: var(--medium-grey); /* Set text color */
+    background:hsl(216, 20%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .5s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for rating rounds */
+.round:hover {
+    color: var(--orange); /* Change text color on hover */
+    background: var(--white); /* Change background color on hover */
+}
+
+/* Selected rating round styles */
+.selected {
+    background: var(--medium-grey); /* Set background color */
+    color: var(--white); /* Set text color */
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    height: 2.5rem;
+    color: var(--white); /* Set text color */
+    background: var(--orange); /* Set background color */
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .5s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    color: var(--orange); /* Change text color on hover */
+    background: var(--white); /* Change background color on hover */
+}
+
+/* Thank you state styles */
+#thank-state {
+    display: none; /* Initially hidden */
+}
+
+/* Thank you state container styles */
+.thank-state {
+    width: 400px;
+    height: 400px;
+    background: var(--dark-blue); /* Set background color */
+    border-radius: 25px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Rating state styles */
+#rating-state {
+    background: hsl(216, 20%, 20%);
+    color: var(--orange);
+    padding: 2px 1rem;
+    border-radius: 50px;
+}
+
+/* Rating description styles */
+.rating-description {
+    text-align: center;
+}
+
+

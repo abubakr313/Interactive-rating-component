@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the site is properly displayed on various devices -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customize in your own stylesheet -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+<main>
+  <!-- Rating state start -->
+  <div class="container">
+    <figure>
+      <img src="/images/icon-star.svg" alt="">
+    </figure>
+    <h2>How did we do?</h2>
+    <p class="description">Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!</p>
+    <div id="rating">
+      <span class="round">1</span>
+      <span class="round">2</span>
+      <span class="round">3</span>
+      <span class="round">4</span>
+      <span class="round">5</span>
+    </div>
+    <button id="submitButton">Submit</button>
+  </div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <div id="thank-state">
+    <div  class="thank-state">
+      <img src="/images/illustration-thank-you.svg" alt="" id="thank-img">
+      <span id="rating-state"> You selected <!-- Add rating here --> out of 5</span>
+      <h2>Thank you!</h2>
+      <p class="description rating-description">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </div>
+  </div>
+</main>
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Your Name Here</a>.
+</div>
+
+<!-- JavaScript code -->
+<script>
+  // Variable to store the selected value
+  let selectedValue = '';
+  
+  // Get all the span elements with the class "round" within the div with id "rating"
+  const spans = document.querySelectorAll('#rating .round');
+  
+  // Add event listeners to each span for click and hover
+  spans.forEach(span => {
+    // Event listener for click
+    span.addEventListener('click', function() {
+      // Reset background color for all rounds
+      spans.forEach(s => s.classList.remove('selected'));
+      // Set background color for clicked round
+      this.classList.add('selected');
+      selectedValue = this.textContent;
+    });
+  });
+
+  // Event listener for submit button click
+  document.getElementById('submitButton').addEventListener('click', function() {
+    // Update rating state text content
+    let ratingState = document.getElementById('rating-state').textContent = `You selected ${selectedValue} out of 5`;
+    // Hide rating container and display thank you state
+    document.querySelector('.container').style.display = 'none';
+    document.getElementById('thank-state').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
